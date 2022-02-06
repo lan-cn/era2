@@ -25,56 +25,21 @@
 </head>
 
 <script type="text/javascript">
-    var websocket = new WebSocket("ws://localhost:11451");
-</script>
-<script>
-    window.onload = function() {
-
-        inst.open();
-
+    function startserve() {
+        var websocket = new WebSocket("ws://localhost:11451");
     }
-    var $ = mdui.$;
-    var inst = new mdui.Dialog('#dialog');
 
-    // method
-    $('#open').on('click', function() {
-        inst.open();
-    });
-
-    // event
-    $('#dialog').on('open.mdui.dialog', function() {
-        console.log('open');
-    });
-
-    $('#dialog').on('opened.mdui.dialog', function() {
-        console.log('opened');
-    });
-
-    $('#dialog').on('close.mdui.dialog', function() {
-        console.log('close');
-    });
-
-    $('#dialog').on('closed.mdui.dialog', function() {
-        console.log('closed');
-    });
-
-    $('#dialog').on('cancel.mdui.dialog', function() {
-        console.log('cancel');
-    });
-
-    $('#dialog').on('confirm.mdui.dialog', function() {
-        console.log('confirm');
-    });
+    function stopserve() {
+        var websocket = new WebSocket("ws://localhost:19198");
+    }
 </script>
-</div>
 
 <body>
 
     <div class="mdui-appbar mdui-color-white mdui-shadow-5">
         <div class="mdui-toolbar mdui-color-white">
 
-            <img style="width: 65px; height: 65px;" class="mdui-img-fluid" data-holder-rendered="true" src="Era2.png" />
-            <p class="mdui-typo-title">Era2加速器</p>
+            <p class="mdui-typo-title"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Era2加速器</p>
             <div class="mdui-toolbar-spacer"></div>
 
             <button class="mdui-btn mdui-color-theme-accent" mdui-menu="{target: '#example-1'}">功能栏</button>
@@ -99,12 +64,8 @@
 
         </div>
     </div>
-
     <div>&nbsp;</div>
-    <div class="mdui-container">
-        <img class="mdui-img-fluid mdui-shadow-5" src="ban.jpg " />
 
-    </div>
     <div>&nbsp;</div>
     </div>
 
@@ -114,11 +75,26 @@
         <div>&nbsp;</div>
         <div>&nbsp;</div>
 
-        <div class="mdui-typo-subheading-opacity">&nbsp;&nbsp;&nbsp;⚠️&nbsp;&nbsp;&nbsp;已经自动连接到节点</div>
+        <div class="mdui-typo-subheading-opacity">&nbsp;&nbsp;&nbsp;⚠️&nbsp;&nbsp;&nbsp;新版本采用在线运行方式</div>
         <div>&nbsp;</div>
         <div>&nbsp;</div>
     </div>
     <div>&nbsp;</div>
+    <div class="mdui-container mdui-shadow-5">
+
+        <div>&nbsp;</div>
+        <div class="mdui-row-xs-2">
+            <div class="mdui-col">
+                <button class="mdui-btn mdui-btn-block mdui-color-theme-accent mdui-ripple" onClick="startserve()">开启服务</button>
+            </div>
+            <div class="mdui-col">
+                <button class="mdui-btn mdui-btn-block mdui-color-theme-accent mdui-ripple" onClick="stopserve()">停止服务</button>
+            </div>
+        </div>
+        <div>&nbsp;</div>
+    </div>
+    <div>&nbsp;</div>
+
     <div class="mdui-container mdui-shadow-5">
         <div class="mdui-progress">
             <div class="mdui-progress-indeterminate"></div>
@@ -137,23 +113,22 @@
 
         <div class="mdui-typo-subheading-opacity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开发日志</div>
         <div>&nbsp;</div>
-        <div class="mdui-container">
-            <div class="mdui-container">
-                <div class="mdui-typo">
-
-                    <blockquote>
-                        <p>ui库由cdn更改为离线访问，解决了因网络环境无法打开程序的问题</p>
-                        <footer>v 1.0.1</footer>
-                    </blockquote>
-                    <blockquote>
-                        <p>第一个版本，添加了网络加速功能，更新、信息反馈、设置、切换代理模式功能正在开发</p>
-                        <footer>v 1.0.0</footer>
-                    </blockquote>
-                </div>
-                <div>&nbsp;</div>
-                <div>&nbsp;</div>
-            </div>
+        <div class="mdui-typo">
+            <blockquote>
+                <p>应用程序改为在线运行</p>
+                <footer>v 1.0.2</footer>
+            </blockquote>
+            <blockquote>
+                <p>优化了应用打开速度</p>
+                <footer>v 1.0.1</footer>
+            </blockquote>
+            <blockquote>
+                <p>第一个版本，添加了网络加速功能，更新、信息反馈、设置、切换代理模式功能正在开发</p>
+                <footer>v 1.0.0</footer>
+            </blockquote>
         </div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
     </div>
 </body>
 <script type="text/javascript">
